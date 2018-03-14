@@ -8,8 +8,8 @@ These problems illustrate concepts that previous problems have not emphasized:
   -- animation (Problem 0c)
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Joe Krisciunas
+"""  # Done
 
 import rosegraphics as rg
 
@@ -131,8 +131,14 @@ def run_test_problem0a():
 
 
 def problem0a(n):
+    sum = sum_of_digits(n)
+    if sum % 2 == 1:
+        return True
+    else:
+        return False
+
     """
-    What comes in:  An integer.
+    What comes in:  An integer. 
     What goes out:
       -- Returns True if the sum of the digits in the given integer
          is odd, else returns False.
@@ -146,7 +152,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -202,6 +208,13 @@ def run_test_problem0b():
 
 
 def problem0b(n):
+    count = 0
+
+    for k in range(n - 1):
+        if is_prime(k + 2):
+            count = count + 1
+    return count
+
     """
     What comes in:  An integer n >= 2.
     What goes out:
@@ -218,7 +231,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -263,7 +276,24 @@ def run_test_problem0c():
 
 
 def problem0c(circle, n, window):
-    """
+
+    circle.attach_to(window)
+    radius = circle.radius
+    center = rg.Point(circle.center.x + (2 * radius), circle.center.y)
+    for k in range(n+2):
+        circle2 = rg.Circle(center, radius)
+        circle2.attach_to(window)
+        center = rg.Point(circle.center.x + (2 * radius * k), circle.center.y)
+        window.render(.5)
+
+    window.render()
+
+
+
+
+
+
+    """ 
     See   problem0c_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
     
@@ -286,7 +316,7 @@ def problem0c(circle, n, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done
     #          Tests have been written for you (above).
     #
     ####################################################################
