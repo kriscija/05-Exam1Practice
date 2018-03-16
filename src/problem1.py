@@ -92,7 +92,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -127,8 +127,8 @@ def run_test_problem1a():
     print('Test 3 expected', expected, 'approximately')
     print('          actual', answer)
 
-    expected = 1.135
-    answer = problem1a(1, -2)
+    expected = -1.9938
+    answer = problem1a(4, 5)
     print()
     print('Test 4 expected', expected, 'approximately')
     print('          actual', answer)
@@ -142,10 +142,12 @@ def run_test_problem1a():
 
 
 def problem1a(m, n):
-    """
-    What comes in:  Integers m and n with abs(m) <= abs(n).
-    What goes out:
-      -- Returns the sum of the sines of the integers
+    import math
+    x = 0
+    for k in range(m**2, n**2+1):
+        x = x + math.sin(k)
+    return(x)
+    """    What comes in:  Integers m and n with abs(m) <= abs(n).    What goes out:      -- Returns the sum of the sines of the integers
          from m squared to n squared, inclusive,
          where m and n are the given arguments.
     Side effects:   None.
@@ -159,7 +161,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -172,7 +174,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # Done
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.
     # ------------------------------------------------------------------
@@ -187,7 +189,46 @@ def run_test_problem1b():
     print('--------------------------------------------------')
 
 
+
+    expected = 5
+    answer = problem1b(3, 5)
+    print()
+    print('Test 1 expected', expected, 'approximately')
+    print('          actual', answer)
+
+    expected = 1
+    answer = problem1b(2, 1)
+    print()
+    print('Test 2 expected', expected, 'approximately')
+    print('          actual', answer)
+
+    expected = 44
+    answer = problem1b(5, 40)
+    print()
+    print('Test 3 expected', expected, 'approximately')
+    print('          actual', answer)
+
+    expected = 3
+    answer = problem1b(2, 3)
+    print()
+    print('Test 4 expected', expected, 'approximately')
+    print('          actual', answer)
+
+
+
+
 def problem1b(m, f):
+    count = 0
+    for k in range(m, (f*m+1)):
+        if is_prime(k) == True:
+            count = count + 1
+        else:
+            count = count + 0
+    return count
+
+
+
+
     """
     What comes in:  Positive integers m and f such that m >= 2.
     What goes out:
@@ -204,7 +245,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done
     #   Note that you should write its TEST function first (above).
     #
     ####################################################################
@@ -277,6 +318,13 @@ def run_test_problem1c():
 
 
 def problem1c(n):
+    count = 1
+    for k in range(2, n+1):
+        if is_prime(k) == True:
+            count = count * k
+
+    return(sum_of_digits(count))
+
     """
     What comes in:  An integer n >= 2.
     What goes out:
@@ -301,7 +349,7 @@ def problem1c(n):
            and the sum of the digits in 223092870 is 33.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done
     #          Tests have been written for you (above).
     #
     ####################################################################
