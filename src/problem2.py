@@ -2,8 +2,8 @@
 PRACTICE Test 1, problem 2.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Joe KRisciunas
+"""  # Done
 
 import rosegraphics as rg
 
@@ -73,6 +73,22 @@ def run_test_problem2a():
 
 
 def problem2a(circle, rectangle, window):
+
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+    point1 = rectangle.get_upper_right_corner()
+    point2 = rectangle.get_lower_left_corner()
+    line = rg.Line(point1, point2)
+    line.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+    circle.fill_color = rectangle.outline_color
+    window.render()
+
+
+
     """
     See   problem2a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
