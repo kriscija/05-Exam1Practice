@@ -118,7 +118,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -160,6 +160,14 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
+
+
+    for k in range(n+1):
+
+
+    win.render()
+
+
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
