@@ -160,9 +160,15 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
+    ulcorn = rect.get_upper_left_corner()
+    brcorner = rect.get_lower_right_corner()
 
-
-    for k in range(n+1):
+    rect.attach_to(win)
+    for k in range(n-1):
+        corner1 = rg.Point(ulcorn.x - (delta*(k+1)), ulcorn.y - (delta*(k+1)))
+        corner2 = rg.Point(brcorner.x + (delta * (k+1)), brcorner.y + (delta * (k+1)))
+        rect1 = rg.Rectangle(corner1, corner2)
+        rect1.attach_to(win)
 
 
     win.render()
