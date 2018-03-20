@@ -219,8 +219,8 @@ def run_test_problem1b():
 
 def problem1b(m, f):
     count = 0
-    for k in range(m, (f*m+1)):
-        if is_prime(k) == True:
+    for k in range((f*m)-m+1):
+        if is_prime(k+m) == True:
             count = count + 1
         else:
             count = count + 0
