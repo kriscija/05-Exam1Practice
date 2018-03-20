@@ -210,7 +210,7 @@ def run_test_problem0b():
 def problem0b(n):
     count = 0
 
-    for k in range(n - 1):
+    for k in range(n-1):
         if is_prime(k + 2):
             count = count + 1
     return count
@@ -279,12 +279,15 @@ def problem0c(circle, n, window):
 
     circle.attach_to(window)
     radius = circle.radius
-    center = rg.Point(circle.center.x + (2 * radius), circle.center.y)
-    for k in range(n+2):
+
+
+    for k in range(n):
+        center = rg.Point(circle.center.x + (2 * radius * (k + 1)), circle.center.y)
         circle2 = rg.Circle(center, radius)
         circle2.attach_to(window)
-        center = rg.Point(circle.center.x + (2 * radius * k), circle.center.y)
         window.render(.5)
+
+
 
     window.render()
 
