@@ -144,8 +144,8 @@ def run_test_problem1a():
 def problem1a(m, n):
     import math
     x = 0
-    for k in range(m**2, n**2+1):
-        x = x + math.sin(k)
+    for k in range((n**2)-(m**2)+1):
+        x = x + math.sin(k+m**2)
     return(x)
     """    What comes in:  Integers m and n with abs(m) <= abs(n).    What goes out:      -- Returns the sum of the sines of the integers
          from m squared to n squared, inclusive,
