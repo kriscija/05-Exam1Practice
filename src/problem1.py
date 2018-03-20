@@ -319,10 +319,9 @@ def run_test_problem1c():
 
 def problem1c(n):
     count = 1
-    for k in range(2, n+1):
-        if is_prime(k) == True:
-            count = count * k
-
+    for k in range(n-1):
+        if is_prime(k+2) == True:
+            count = count * (k+2)
     return(sum_of_digits(count))
 
     """

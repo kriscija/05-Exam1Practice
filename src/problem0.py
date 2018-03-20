@@ -282,7 +282,7 @@ def problem0c(circle, n, window):
 
 
     for k in range(n):
-        center = rg.Point(circle.center.x + (2 * radius * (k + 1)), circle.center.y)
+        center = rg.Point(circle.center.x + (2 * radius * (k+1)), circle.center.y)
         circle2 = rg.Circle(center, radius)
         circle2.attach_to(window)
         window.render(.5)
